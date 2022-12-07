@@ -1,0 +1,602 @@
+[
+    {
+        "TokenName": "Bitcoin",
+        "TokenSymbol": "btc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
+        "Price": 17281.16
+    },
+    {
+        "TokenName": "Ethereum",
+        "TokenSymbol": "eth",
+        "TokenImage": "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880",
+        "Price": 1291.7
+    },
+    {
+        "TokenName": "Tether",
+        "TokenSymbol": "usdt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/325/large/Tether.png?1668148663",
+        "Price": 1.001
+    },
+    {
+        "TokenName": "BNB",
+        "TokenSymbol": "bnb",
+        "TokenImage": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1644979850",
+        "Price": 296.42
+    },
+    {
+        "TokenName": "USD Coin",
+        "TokenSymbol": "usdc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png?1547042389",
+        "Price": 0.999457
+    },
+    {
+        "TokenName": "Binance USD",
+        "TokenSymbol": "busd",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9576/large/BUSD.png?1568947766",
+        "Price": 1.001
+    },
+    {
+        "TokenName": "XRP",
+        "TokenSymbol": "xrp",
+        "TokenImage": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1605778731",
+        "Price": 0.391308
+    },
+    {
+        "TokenName": "Dogecoin",
+        "TokenSymbol": "doge",
+        "TokenImage": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png?1547792256",
+        "Price": 0.104663
+    },
+    {
+        "TokenName": "Cardano",
+        "TokenSymbol": "ada",
+        "TokenImage": "https://assets.coingecko.com/coins/images/975/large/cardano.png?1547034860",
+        "Price": 0.323991
+    },
+    {
+        "TokenName": "Polygon",
+        "TokenSymbol": "matic",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png?1624446912",
+        "Price": 0.934348
+    },
+    {
+        "TokenName": "Polkadot",
+        "TokenSymbol": "dot",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png?1639712644",
+        "Price": 5.65
+    },
+    {
+        "TokenName": "Lido Staked Ether",
+        "TokenSymbol": "steth",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13442/large/steth_logo.png?1608607546",
+        "Price": 1277.24
+    },
+    {
+        "TokenName": "Litecoin",
+        "TokenSymbol": "ltc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2/large/litecoin.png?1547033580",
+        "Price": 77.81
+    },
+    {
+        "TokenName": "Shiba Inu",
+        "TokenSymbol": "shib",
+        "TokenImage": "https://assets.coingecko.com/coins/images/11939/large/shiba.png?1622619446",
+        "Price": 9.38e-06
+    },
+    {
+        "TokenName": "OKB",
+        "TokenSymbol": "okb",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4463/large/WeChat_Image_20220118095654.png?1642471050",
+        "Price": 21.92
+    },
+    {
+        "TokenName": "Dai",
+        "TokenSymbol": "dai",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9956/large/4943.png?1636636734",
+        "Price": 1.001
+    },
+    {
+        "TokenName": "Solana",
+        "TokenSymbol": "sol",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4128/large/solana.png?1640133422",
+        "Price": 14.12
+    },
+    {
+        "TokenName": "TRON",
+        "TokenSymbol": "trx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1094/large/tron-logo.png?1547035066",
+        "Price": 0.053351
+    },
+    {
+        "TokenName": "Uniswap",
+        "TokenSymbol": "uni",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12504/large/uniswap-uni.png?1600306604",
+        "Price": 6.35
+    },
+    {
+        "TokenName": "Avalanche",
+        "TokenSymbol": "avax",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12559/large/coin-round-red.png?1604021818",
+        "Price": 14.03
+    },
+    {
+        "TokenName": "Chainlink",
+        "TokenSymbol": "link",
+        "TokenImage": "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png?1547034700",
+        "Price": 7.53
+    },
+    {
+        "TokenName": "Wrapped Bitcoin",
+        "TokenSymbol": "wbtc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png?1548822744",
+        "Price": 17187.93
+    },
+    {
+        "TokenName": "LEO Token",
+        "TokenSymbol": "leo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/8418/large/leo-token.png?1558326215",
+        "Price": 3.8
+    },
+    {
+        "TokenName": "Cosmos Hub",
+        "TokenSymbol": "atom",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png?1555657960",
+        "Price": 10.43
+    },
+    {
+        "TokenName": "Ethereum Classic",
+        "TokenSymbol": "etc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/453/large/ethereum-classic-logo.png?1547034169",
+        "Price": 19.62
+    },
+    {
+        "TokenName": "The Open Network",
+        "TokenSymbol": "ton",
+        "TokenImage": "https://assets.coingecko.com/coins/images/17980/large/ton.PNG?1630023132",
+        "Price": 1.81
+    },
+    {
+        "TokenName": "Monero",
+        "TokenSymbol": "xmr",
+        "TokenImage": "https://assets.coingecko.com/coins/images/69/large/monero_logo.png?1547033729",
+        "Price": 143.62
+    },
+    {
+        "TokenName": "Stellar",
+        "TokenSymbol": "xlm",
+        "TokenImage": "https://assets.coingecko.com/coins/images/100/large/Stellar_symbol_black_RGB.png?1552356157",
+        "Price": 0.088256
+    },
+    {
+        "TokenName": "Bitcoin Cash",
+        "TokenSymbol": "bch",
+        "TokenImage": "https://assets.coingecko.com/coins/images/780/large/bitcoin-cash-circle.png?1594689492",
+        "Price": 111.88
+    },
+    {
+        "TokenName": "Quant",
+        "TokenSymbol": "qnt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/3370/large/5ZOu7brX_400x400.jpg?1612437252",
+        "Price": 131.87
+    },
+    {
+        "TokenName": "Cronos",
+        "TokenSymbol": "cro",
+        "TokenImage": "https://assets.coingecko.com/coins/images/7310/large/cro_token_logo.png?1669699773",
+        "Price": 0.070481
+    },
+    {
+        "TokenName": "Algorand",
+        "TokenSymbol": "algo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4380/large/download.png?1547039725",
+        "Price": 0.242378
+    },
+    {
+        "TokenName": "Filecoin",
+        "TokenSymbol": "fil",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12817/large/filecoin.png?1602753933",
+        "Price": 4.57
+    },
+    {
+        "TokenName": "ApeCoin",
+        "TokenSymbol": "ape",
+        "TokenImage": "https://assets.coingecko.com/coins/images/24383/large/apecoin.jpg?1647476455",
+        "Price": 4.09
+    },
+    {
+        "TokenName": "NEAR Protocol",
+        "TokenSymbol": "near",
+        "TokenImage": "https://assets.coingecko.com/coins/images/10365/large/near_icon.png?1601359077",
+        "Price": 1.75
+    },
+    {
+        "TokenName": "VeChain",
+        "TokenSymbol": "vet",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1167/large/VeChain-Logo-768x725.png?1547035194",
+        "Price": 0.01939515
+    },
+    {
+        "TokenName": "Hedera",
+        "TokenSymbol": "hbar",
+        "TokenImage": "https://assets.coingecko.com/coins/images/3688/large/hbar.png?1637045634",
+        "Price": 0.04853894
+    },
+    {
+        "TokenName": "Internet Computer",
+        "TokenSymbol": "icp",
+        "TokenImage": "https://assets.coingecko.com/coins/images/14495/large/Internet_Computer_logo.png?1620703073",
+        "Price": 4.37
+    },
+    {
+        "TokenName": "Flow",
+        "TokenSymbol": "flow",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13446/large/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.png?1631696776",
+        "Price": 1.14
+    },
+    {
+        "TokenName": "Terra Luna Classic",
+        "TokenSymbol": "lunc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/8284/large/01_LunaClassic_color.png?1653547790",
+        "Price": 0.00017716
+    },
+    {
+        "TokenName": "MultiversX (Elrond)",
+        "TokenSymbol": "egld",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12335/large/elrond3_360.png?1626341589",
+        "Price": 43.41
+    },
+    {
+        "TokenName": "Frax",
+        "TokenSymbol": "frax",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13422/large/ethCanonicalFRAX.png?1669277108",
+        "Price": 0.999213
+    },
+    {
+        "TokenName": "EOS",
+        "TokenSymbol": "eos",
+        "TokenImage": "https://assets.coingecko.com/coins/images/738/large/eos-eos-logo.png?1547034481",
+        "Price": 0.936437
+    },
+    {
+        "TokenName": "Trust Wallet",
+        "TokenSymbol": "twt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/11085/large/Trust.png?1588062702",
+        "Price": 2.42
+    },
+    {
+        "TokenName": "The Sandbox",
+        "TokenSymbol": "sand",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12129/large/sandbox_logo.jpg?1597397942",
+        "Price": 0.593555
+    },
+    {
+        "TokenName": "Tezos",
+        "TokenSymbol": "xtz",
+        "TokenImage": "https://assets.coingecko.com/coins/images/976/large/Tezos-logo.png?1547034862",
+        "Price": 1.014
+    },
+    {
+        "TokenName": "Aave",
+        "TokenSymbol": "aave",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12645/large/AAVE.png?1601374110",
+        "Price": 65.04
+    },
+    {
+        "TokenName": "Chiliz",
+        "TokenSymbol": "chz",
+        "TokenImage": "https://assets.coingecko.com/coins/images/8834/large/Chiliz.png?1561970540",
+        "Price": 0.168832
+    },
+    {
+        "TokenName": "Theta Network",
+        "TokenSymbol": "theta",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2538/large/theta-token-logo.png?1548387191",
+        "Price": 0.898306
+    },
+    {
+        "TokenName": "Lido DAO",
+        "TokenSymbol": "ldo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13573/large/Lido_DAO.png?1609873644",
+        "Price": 1.12
+    },
+    {
+        "TokenName": "Huobi",
+        "TokenSymbol": "ht",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2822/large/huobi-token-logo.png?1547036992",
+        "Price": 6.74
+    },
+    {
+        "TokenName": "Chain",
+        "TokenSymbol": "xcn",
+        "TokenImage": "https://assets.coingecko.com/coins/images/24210/large/Chain_icon_200x200.png?1646895054",
+        "Price": 0.03845547
+    },
+    {
+        "TokenName": "Bitcoin SV",
+        "TokenSymbol": "bsv",
+        "TokenImage": "https://assets.coingecko.com/coins/images/6799/large/BSV.png?1558947902",
+        "Price": 42.55
+    },
+    {
+        "TokenName": "TrueUSD",
+        "TokenSymbol": "tusd",
+        "TokenImage": "https://assets.coingecko.com/coins/images/3449/large/tusd.png?1618395665",
+        "Price": 0.998809
+    },
+    {
+        "TokenName": "Axie Infinity",
+        "TokenSymbol": "axs",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13029/large/axie_infinity_logo.png?1604471082",
+        "Price": 7.01
+    },
+    {
+        "TokenName": "Pax Dollar",
+        "TokenSymbol": "usdp",
+        "TokenImage": "https://assets.coingecko.com/coins/images/6013/large/Pax_Dollar.png?1629877204",
+        "Price": 0.999684
+    },
+    {
+        "TokenName": "Decentraland",
+        "TokenSymbol": "mana",
+        "TokenImage": "https://assets.coingecko.com/coins/images/878/large/decentraland-mana.png?1550108745",
+        "Price": 0.412444
+    },
+    {
+        "TokenName": "USDD",
+        "TokenSymbol": "usdd",
+        "TokenImage": "https://assets.coingecko.com/coins/images/25380/large/UUSD.jpg?1651823371",
+        "Price": 0.981228
+    },
+    {
+        "TokenName": "Aptos",
+        "TokenSymbol": "apt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/26455/large/aptos_round.png?1666839629",
+        "Price": 5.21
+    },
+    {
+        "TokenName": "BitTorrent",
+        "TokenSymbol": "btt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/22457/large/btt_logo.png?1643857231",
+        "Price": 7.01179e-07
+    },
+    {
+        "TokenName": "PancakeSwap",
+        "TokenSymbol": "cake",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12632/large/pancakeswap-cake-logo_%281%29.png?1629359065",
+        "Price": 4.04
+    },
+    {
+        "TokenName": "KuCoin",
+        "TokenSymbol": "kcs",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1047/large/sa9z79.png?1610678720",
+        "Price": 6.58
+    },
+    {
+        "TokenName": "Fantom",
+        "TokenSymbol": "ftm",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4001/large/Fantom_round.png?1669652346",
+        "Price": 0.243683
+    },
+    {
+        "TokenName": "Tokenize Xchange",
+        "TokenSymbol": "tkx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4984/large/Tokenize.png?1561602968",
+        "Price": 7.68
+    },
+    {
+        "TokenName": "Zcash",
+        "TokenSymbol": "zec",
+        "TokenImage": "https://assets.coingecko.com/coins/images/486/large/circle-zcash-color.png?1547034197",
+        "Price": 45.97
+    },
+    {
+        "TokenName": "Gemini Dollar",
+        "TokenSymbol": "gusd",
+        "TokenImage": "https://assets.coingecko.com/coins/images/5992/large/gemini-dollar-gusd.png?1536745278",
+        "Price": 1.001
+    },
+    {
+        "TokenName": "IOTA",
+        "TokenSymbol": "miota",
+        "TokenImage": "https://assets.coingecko.com/coins/images/692/large/IOTA_Swirl.png?1604238557",
+        "Price": 0.215181
+    },
+    {
+        "TokenName": "Maker",
+        "TokenSymbol": "mkr",
+        "TokenImage": "https://assets.coingecko.com/coins/images/1364/large/Mark_Maker.png?1585191826",
+        "Price": 651.83
+    },
+    {
+        "TokenName": "WhiteBIT Token",
+        "TokenSymbol": "wbt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/27045/large/wbt_token.png?1667923752",
+        "Price": 4.82
+    },
+    {
+        "TokenName": "cUSDC",
+        "TokenSymbol": "cusdc",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9442/large/Compound_USDC.png?1567581577",
+        "Price": 0.02269217
+    },
+    {
+        "TokenName": "Klaytn",
+        "TokenSymbol": "klay",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9672/large/klaytn.png?1660288824",
+        "Price": 0.190546
+    },
+    {
+        "TokenName": "eCash",
+        "TokenSymbol": "xec",
+        "TokenImage": "https://assets.coingecko.com/coins/images/16646/large/Logo_final-22.png?1628239446",
+        "Price": 2.989e-05
+    },
+    {
+        "TokenName": "Gate",
+        "TokenSymbol": "gt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/8183/large/gt.png?1556085624",
+        "Price": 3.64
+    },
+    {
+        "TokenName": "Dash",
+        "TokenSymbol": "dash",
+        "TokenImage": "https://assets.coingecko.com/coins/images/19/large/dash-logo.png?1548385930",
+        "Price": 45.85
+    },
+    {
+        "TokenName": "Osmosis",
+        "TokenSymbol": "osmo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/16724/large/osmo.png?1632763885",
+        "Price": 0.999602
+    },
+    {
+        "TokenName": "NEO",
+        "TokenSymbol": "neo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/480/large/NEO_512_512.png?1594357361",
+        "Price": 6.94
+    },
+    {
+        "TokenName": "PAX Gold",
+        "TokenSymbol": "paxg",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9519/large/paxg.PNG?1568542565",
+        "Price": 1792.7
+    },
+    {
+        "TokenName": "The Graph",
+        "TokenSymbol": "grt",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13397/large/Graph_Token.png?1608145566",
+        "Price": 0.064609
+    },
+    {
+        "TokenName": "Arweave",
+        "TokenSymbol": "ar",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4343/large/oRt6SiEN_400x400.jpg?1591059616",
+        "Price": 9.35
+    },
+    {
+        "TokenName": "cETH",
+        "TokenSymbol": "ceth",
+        "TokenImage": "https://assets.coingecko.com/coins/images/10643/large/ceth2.JPG?1581389598",
+        "Price": 25.91
+    },
+    {
+        "TokenName": "GMX",
+        "TokenSymbol": "gmx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/18323/large/arbit.png?1631532468",
+        "Price": 54.08
+    },
+    {
+        "TokenName": "Mina Protocol",
+        "TokenSymbol": "mina",
+        "TokenImage": "https://assets.coingecko.com/coins/images/15628/large/JM4_vQ34_400x400.png?1621394004",
+        "Price": 0.582072
+    },
+    {
+        "TokenName": "BTSE Token",
+        "TokenSymbol": "btse",
+        "TokenImage": "https://assets.coingecko.com/coins/images/10807/large/BTSE_logo_Square.jpeg?1583965964",
+        "Price": 2.74
+    },
+    {
+        "TokenName": "Curve DAO",
+        "TokenSymbol": "crv",
+        "TokenImage": "https://assets.coingecko.com/coins/images/12124/large/Curve.png?1597369484",
+        "Price": 0.675129
+    },
+    {
+        "TokenName": "EthereumPoW",
+        "TokenSymbol": "ethw",
+        "TokenImage": "https://assets.coingecko.com/coins/images/26997/large/logo-clear.png?1661311105",
+        "Price": 4.06
+    },
+    {
+        "TokenName": "Synthetix Network",
+        "TokenSymbol": "snx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/3406/large/SNX.png?1598631139",
+        "Price": 1.79
+    },
+    {
+        "TokenName": "cDAI",
+        "TokenSymbol": "cdai",
+        "TokenImage": "https://assets.coingecko.com/coins/images/9281/large/cDAI.png?1576467585",
+        "Price": 0.02214533
+    },
+    {
+        "TokenName": "Tether Gold",
+        "TokenSymbol": "xaut",
+        "TokenImage": "https://assets.coingecko.com/coins/images/10481/large/Tether_Gold.png?1668148656",
+        "Price": 1716.66
+    },
+    {
+        "TokenName": "THORChain",
+        "TokenSymbol": "rune",
+        "TokenImage": "https://assets.coingecko.com/coins/images/6595/large/RUNE.png?1614160507",
+        "Price": 1.39
+    },
+    {
+        "TokenName": "Rocket Pool",
+        "TokenSymbol": "rpl",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2090/large/rocket_pool_%28RPL%29.png?1637662441",
+        "Price": 20.55
+    },
+    {
+        "TokenName": "NEXO",
+        "TokenSymbol": "nexo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/3695/large/nexo.png?1548086057",
+        "Price": 0.689734
+    },
+    {
+        "TokenName": "ImmutableX",
+        "TokenSymbol": "imx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/17233/large/immutableX-symbol-BLK-RGB.png?1665110648",
+        "Price": 0.506509
+    },
+    {
+        "TokenName": "Ethereum Name Service",
+        "TokenSymbol": "ens",
+        "TokenImage": "https://assets.coingecko.com/coins/images/19785/large/acatxTm8_400x400.jpg?1635850140",
+        "Price": 14.02
+    },
+    {
+        "TokenName": "Radix",
+        "TokenSymbol": "xrd",
+        "TokenImage": "https://assets.coingecko.com/coins/images/4374/large/Radix.png?1629701658",
+        "Price": 0.03568213
+    },
+    {
+        "TokenName": "Frax Share",
+        "TokenSymbol": "fxs",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13423/large/ethCanonicalFXS.png?1669276861",
+        "Price": 4.96
+    },
+    {
+        "TokenName": "Celo",
+        "TokenSymbol": "celo",
+        "TokenImage": "https://assets.coingecko.com/coins/images/11090/large/icon-celo-CELO-color-500.png?1592293590",
+        "Price": 0.732301
+    },
+    {
+        "TokenName": "Basic Attention",
+        "TokenSymbol": "bat",
+        "TokenImage": "https://assets.coingecko.com/coins/images/677/large/basic-attention-token.png?1547034427",
+        "Price": 0.234669
+    },
+    {
+        "TokenName": "Zilliqa",
+        "TokenSymbol": "zil",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2687/large/Zilliqa-logo.png?1547036894",
+        "Price": 0.02303786
+    },
+    {
+        "TokenName": "Stacks",
+        "TokenSymbol": "stx",
+        "TokenImage": "https://assets.coingecko.com/coins/images/2069/large/Stacks_logo_full.png?1604112510",
+        "Price": 0.252636
+    },
+    {
+        "TokenName": "1inch",
+        "TokenSymbol": "1inch",
+        "TokenImage": "https://assets.coingecko.com/coins/images/13469/large/1inch-token.png?1608803028",
+        "Price": 0.50146
+    }
+]
