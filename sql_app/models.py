@@ -22,7 +22,6 @@ class User(Base):
     bio = Column(String(500))
     
     balanceuser = relationship("UserBalance", back_populates = "user")
-    transactionuser = relationship("Transaction", back_populates = "user")
     
 class Token(Base):
     __tablename__ = "token"
@@ -57,15 +56,5 @@ class Pool(Base):
     token1price = Column(Float)
     tvl = Column(Float)
     
-    transactionpool = relationship("Transaction", back_populates = "pool")
-    
-class Transaction(Base):
-    __tablename__ = "transaction"
-    
-    txid = Column(Integer, primary_key = True, index = True)
-    username = Column(String(50), ForeignKey("user.username"))
-    poolid = Column(Integer, ForeignKey("pool.poolid"))
-    amount0 = Column(Float)
-    amount1 = Column(Float)
     
     

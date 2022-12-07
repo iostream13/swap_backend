@@ -46,13 +46,4 @@ class Pool(BaseModel):
     
     class Config:
         orm_mode = True
-    
-class Transaction(BaseModel):
-    txid: int
-    username: str 
-    poolid: int 
-    amount0: float 
-    amount1: float
-    
-    class Config:
-        orm_mode = True
+

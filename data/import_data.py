@@ -30,7 +30,7 @@ pool_data = json.load(cp)
 
 sql = "INSERT INTO Pool (token0, token1, reserve0, reserve1, token0price, token1price, tvl) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 
-for pool in data:
+for pool in pool_data:
     val = (pool['token0'], 
            pool['token1'],
            pool['reserve0'],
