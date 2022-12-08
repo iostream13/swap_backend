@@ -13,7 +13,6 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from sqlalchemy.orm import Session
 from sql_app import crud, models, schemas
 from sql_app.database import SessionLocal, engine
-from sql_app.models import Action
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -42,6 +41,14 @@ def get_db():
 def show():
     return "hello"
 
+@app.get("/pools/")
+def get_markets(db: Session = Depends(get_db)):
+    return crud.get_pools(db)
+
+
+@app.get("/tokens/")
+def get_tokens(db: Session = Depends(get_db)):
+    return crud.get_tokens(db)
 
 @app.post("/usercreate/", response_model=schemas.UserCreate)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -85,19 +92,19 @@ def add_balance(user: str, token: str, amount: float, db: Session = Depends(get_
 
 @app.post("/update_user/", status_code=status.HTTP_201_CREATED)
 def update(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    if crud.get_user_by_name(db, user) is None:
+    if crud.get_user_by_name(db, user.username) is None:
         raise HTTPException(status_code=404, detail="user not found")
         return None
     user_update = crud.update_user(db, user)
     return user_update
 
 
-@app.post("/swap/cal")
+@app.get("/swap/cal")
 def cal_swap(token0: str, token1: str, amount: float, db: Session = Depends(get_db)):
     if crud.get_pool(db, token0, token1) is None:
         raise HTTPException(status_code=404, detail="pool not found")
         return None
-    crud.calculate(db, token0, token1, amount)
+    return crud.calculate(db, token0, token1, amount)
 
 
 @app.post("/swap/")
@@ -110,12 +117,3 @@ def cal_swap(token0: str, token1: str, amount: float, user: str, db: Session = D
         return None
     return crud.swap(db, token0, token1, amount, user)
 
-
-@app.get("/pools/")
-def get_markets(db: Session = Depends(get_db)):
-    return crud.get_pools(db)
-
-
-@app.get("/tokens/")
-def get_tokens(db: Session = Depends(get_db)):
-    return crud.get_tokens(db)

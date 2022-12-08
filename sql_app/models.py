@@ -1,6 +1,6 @@
 from datetime import date
 from operator import index
-from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String, column, true, Enum, DateTime
+from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String, column, true, Enum, DateTime, Date
 from sqlalchemy.orm import relationship
 import enum
 
@@ -16,12 +16,10 @@ class User(Base):
     username = Column(String(50), primary_key = True, index = True)
     password = Column(String(100))
     gender = Column(Enum(Gender))
-    birthday = Column(date)
+    birthday = Column(Date)
     email = Column(String(100))
     phone = Column(String(15))
     bio = Column(String(500))
-    
-    balanceuser = relationship("UserBalance", back_populates = "user")
     
 class Token(Base):
     __tablename__ = "token"
@@ -31,18 +29,12 @@ class Token(Base):
     tokenimage = Column(String(1000))
     price = Column(Float)
     
-    balancetoken = relationship("UserBalance", back_populates = "token")
-    pooltokens = relationship("Pool", back_populates = "token")
-    
 class UserBalance(Base):
     __tablename__ = "userbalance"
     
     username = Column(String(50), ForeignKey("user.username"), primary_key = True)
     tokenname = Column(String(50), ForeignKey("token.tokenname"), primary_key = True)
     amount = Column(Float)
-    
-    user = relationship("User", back_populates = "balanceuser")
-    token = relationship("Token", back_populates = "balancetoken")
     
 class Pool(Base):
     __tablename__ = "pool"

@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import date
 
 from .models import Gender
 
@@ -9,7 +9,7 @@ class UserCreate(BaseModel):
     username: str
     gender: Gender
     password: str
-    birthday: datetime
+    birthday: date
     email: str 
     phone: str
     bio: str

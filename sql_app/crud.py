@@ -61,7 +61,7 @@ def add_balance(db: Session, username: str, tokenname: str, amount: float):
         db.refresh(db_userbalance)
         return db_userbalance
     if db_balance.amount + amount < 0:
-            return None
+        return None
     db.query(models.UserBalance).filter(and_(
         models.UserBalance.username == username, models.UserBalance.tokenname == tokenname)).update({"amount": db_balance.amount + amount})
     db.commit()
@@ -89,9 +89,6 @@ def create_user(db: Session, user: schemas.UserCreate):
     return db_user
 
 def update_user(db: Session, user: schemas.UserCreate):
-    username = ""
-    if user.username is not None:
-        username = user.username
     password = ""
     if user.password is not None:
         password = user.password
@@ -110,9 +107,9 @@ def update_user(db: Session, user: schemas.UserCreate):
     phone = ""
     if user.phone is not None:
         phone = user.phone
-    db_user = models.User(username=username,
+    db_user = models.User(username=user.username,
                           password=password, gender=gender, birthday=birthday, email=email, phone=phone, bio=bio)
-    db.query(models.User).filter(models.User.username == user.username).update({"username": username, "password": password, "gender": gender, 
+    db.query(models.User).filter(models.User.username == user.username).update({"password": password, "gender": gender, 
                                                                                 "birthday": birthday, "email": email, "phone": phone, "bio": bio})
     db.commit()
     return db_user
@@ -156,7 +153,7 @@ def get_pool(db: Session, token0: str, token1: str):
     pool: models.Pool = db.query(models.Pool).filter(and_(
         models.Pool.token0 == token0, models.Pool.token1 == token1)).first()
     if pool is None:
-        pool: models.Pool = db.query(models.Pool).filter(and_(
+        pool = db.query(models.Pool).filter(and_(
             models.Pool.token0 == token1, models.Pool.token1 == token0)).first()
     return pool 
 
@@ -187,10 +184,11 @@ def swap(db: Session, token0: str, token1: str, amount: float, user_name: str):
         new_reserve1 = pool.reserve1 - return_state[0]
         new_tvl = new_reserve0 * pool.token0price + new_reserve1 * pool.token1price
     else:
-        new_reserve0 = pool.reserve1 + amount
-        new_reserve1 = pool.reserve0 - return_state[0]
-        new_tvl = new_reserve0 * pool.token1price + new_reserve1 * pool.token0price
+        new_reserve1 = pool.reserve1 + amount
+        new_reserve0 = pool.reserve0 - return_state[0]
+        new_tvl = new_reserve0 * pool.token0price + new_reserve1 * pool.token1price
     db.query(models.Pool).filter(models.Pool.poolid == pool.poolid).update({"reserve0": new_reserve0, "reserve1": new_reserve1, "tvl": new_tvl})
     db.commit()
+    return "OK"
     
 
