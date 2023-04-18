@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List
 from pydantic import BaseModel
-from datetime import date
+from datetime import datetime, date
 
 from .models import Gender
 
@@ -22,6 +22,7 @@ class Token(BaseModel):
     tokensymbol: str
     tokenimage: str
     price: float
+    marketcap: int
     
     class Config:
         orm_mode = True
@@ -40,10 +41,18 @@ class Pool(BaseModel):
     token1: str 
     reserve0: float
     reserve1: float 
-    token0price: float
-    token1price: float
     tvl: float
     
     class Config:
         orm_mode = True
-
+    
+class Log(BaseModel):
+    logid: int
+    username: str 
+    poolid: int 
+    timestamp: datetime
+    amounttoken0: float 
+    amounttoken1: float
+    
+    class Config:
+        orm_mode = True

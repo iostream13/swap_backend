@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 from operator import index
 from sqlalchemy import Boolean, Column, Float, ForeignKey, Integer, String, column, true, Enum, DateTime, Date
 from sqlalchemy.orm import relationship
@@ -28,6 +28,7 @@ class Token(Base):
     tokensymbol = Column(String(10))
     tokenimage = Column(String(1000))
     price = Column(Float)
+    marketcap = Column(Integer)
     
 class UserBalance(Base):
     __tablename__ = "userbalance"
@@ -35,6 +36,7 @@ class UserBalance(Base):
     username = Column(String(50), ForeignKey("user.username"), primary_key = True)
     tokenname = Column(String(50), ForeignKey("token.tokenname"), primary_key = True)
     amount = Column(Float)
+    
     
 class Pool(Base):
     __tablename__ = "pool"
@@ -44,9 +46,16 @@ class Pool(Base):
     token1 = Column(String(50), ForeignKey("token.tokenname"))
     reserve0 = Column(Float)
     reserve1 = Column(Float)
-    token0price = Column(Float)
-    token1price = Column(Float)
     tvl = Column(Float)
     
+class Log(Base):
+    __tablename__ = "log"
+    
+    logid = Column(Integer, primary_key = True, index = True)
+    username = Column(String(50), ForeignKey("user.username"))
+    poolid = Column(Integer, ForeignKey("pool.poolid"))
+    timestamp = Column(DateTime)
+    amounttoken0 = Column(Float)
+    amounttoken1 = Column(Float)
     
     

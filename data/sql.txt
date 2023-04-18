@@ -1,0 +1,67 @@
+use bakaswap;
+drop table if exists Log;
+drop table if exists UserBalance;
+drop table if exists Pool;
+drop table if exists Token;
+drop table if exists User;
+ 
+create table if not exists User (
+	UserName varchar(50) unique not null,
+    PassWord varchar(100) not null,
+    Gender enum('MALE', 'FEMALE') not null,
+    Birthday date,
+    Email varchar(100),
+    Phone varchar(15),
+    Bio varchar(500),
+    primary key (UserName)
+);
+ 
+create table if not exists Token (
+	TokenName varchar(50) unique not null,
+    TokenSymbol varchar(10) unique not null,
+    TokenImage varchar(1000),
+    Price double(30,10) not null,
+    MarketCap bigint,
+    primary key (TokenName)
+);
+ 
+create table if not exists UserBalance (
+	UserName varchar(50) not null,
+    TokenName varchar(50) not null,
+    Amount double(30,10) not null,
+    constraint fk_UserBalance_User foreign key (Username) references User(Username) 
+		on delete restrict on update cascade,
+	constraint fk_UserBalance_Token foreign key (TokenName) references Token(TokenName)
+		on delete restrict on update cascade,
+	constraint pk_UserBalance primary key (UserName, TokenName),
+    constraint UserBalanceAmountPositive check (Amount >= 0)
+);
+ 
+create table if not exists Pool (
+	PoolID int unique not null auto_increment,
+	Token0 varchar(50) not null,
+    Token1 varchar(50) not null,
+    Reserve0 double(30,10) not null,
+    Reserve1 double(30,10) not null,
+    TVL double(30,10) not null,
+	primary key (PoolID),
+    constraint fk_Pool_token0 foreign key (Token0) references Token(Tokenname) 
+		on delete restrict on update cascade,
+	constraint fk_Pool_token1 foreign key (Token1) references Token(Tokenname) 
+		on delete restrict on update cascade,
+    unique(token0, token1)
+);
+
+create table if not exists Log (
+	LogID int unique not null auto_increment,
+    UserName varchar(50) not null,
+    PoolID int not null,
+    Timestamp datetime not null,
+    AmountToken0 double(30,10) not null,
+    AmountToken1 double(30,10) not null,
+    primary key (LogID),
+    constraint fk_Log_User foreign key (UserName) references User(Username) 
+		on delete restrict on update cascade,
+	constraint fk_Log_Pool foreign key (PoolID) references Pool(PoolID) 
+		on delete restrict on update cascade
+);
