@@ -48,14 +48,23 @@ class Pool(Base):
     reserve1 = Column(Float)
     tvl = Column(Float)
     
-class Log(Base):
-    __tablename__ = "log"
+class SwapLog(Base):
+    __tablename__ = "swaplog"
     
-    logid = Column(Integer, primary_key = True, index = True)
+    swaplogid = Column(Integer, primary_key = True, index = True)
     username = Column(String(50), ForeignKey("user.username"))
     poolid = Column(Integer, ForeignKey("pool.poolid"))
     timestamp = Column(DateTime)
     amounttoken0 = Column(Float)
     amounttoken1 = Column(Float)
+    
+class BalanceLog(Base):
+    __tablename__ = "balancelog"
+    
+    balancelogid = Column(Integer, primary_key = True, index = True)
+    username = Column(String(50), ForeignKey("user.username"))
+    tokenname = Column(String(50), ForeignKey("token.tokenname"))
+    amount = Column(Float)
+    timestamp = Column(DateTime)
     
     

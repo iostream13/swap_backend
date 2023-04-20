@@ -129,15 +129,19 @@ def get_pools_by_token(token0: str, token1: str, db: Session = Depends(get_db)):
 def get_list_tokens(db: Session = Depends(get_db)):
     return crud.get_tokens(db)
 
-@app.get("/logs/")
-def get_all_logs(db: Session = Depends(get_db)):
+@app.get("/swaplogs/")
+def get_all_swaplogs(db: Session = Depends(get_db)):
     return crud.get_logs(db)
 
-@app.get("/logs/pool/{id}")
-def get_log_by_poolid(id: int, db: Session = Depends(get_db)):
+@app.get("/swaplogs/pool/{id}")
+def get_swaplog_by_poolid(id: int, db: Session = Depends(get_db)):
     return crud.get_log_by_pool(db, id)
 
-@app.get("/logs/user/{username}")
-def get_log_by_username(username: str, db: Session = Depends(get_db)):
+@app.get("/swaplogs/user/{username}")
+def get_swaplog_by_username(username: str, db: Session = Depends(get_db)):
     return crud.get_log_by_username(db, username)
+
+@app.get("/balancelogs/{username}")
+def get_balancelog_by_username(username: str, db: Session = Depends(get_db)):
+    return crud.get_balance_log_by_username(db, username)
 

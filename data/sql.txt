@@ -1,5 +1,7 @@
 use bakaswap;
 drop table if exists Log;
+drop table if exists BalanceLog;
+drop table if exists SwapLog;
 drop table if exists UserBalance;
 drop table if exists Pool;
 drop table if exists Token;
@@ -52,16 +54,29 @@ create table if not exists Pool (
     unique(token0, token1)
 );
 
-create table if not exists Log (
-	LogID int unique not null auto_increment,
+create table if not exists SwapLog (
+	SwapLogID int unique not null auto_increment,
     UserName varchar(50) not null,
     PoolID int not null,
     Timestamp datetime not null,
     AmountToken0 double(30,10) not null,
     AmountToken1 double(30,10) not null,
-    primary key (LogID),
-    constraint fk_Log_User foreign key (UserName) references User(Username) 
+    primary key (SwapLogID),
+    constraint fk_SwapLog_User foreign key (UserName) references User(Username) 
 		on delete restrict on update cascade,
-	constraint fk_Log_Pool foreign key (PoolID) references Pool(PoolID) 
+	constraint fk_SwapLog_Pool foreign key (PoolID) references Pool(PoolID) 
+		on delete restrict on update cascade
+);
+
+create table if not exists BalanceLog (
+	BalanceLogID int unique not null auto_increment,
+    UserName varchar(50) not null,
+    TokenName varchar(50) not null,
+    Amount double(30,10) not null,
+    Timestamp datetime not null,
+    primary key (BalanceLogID),
+    constraint fk_Log_User foreign key (UserName) references User(UserName) 
+		on delete restrict on update cascade,
+	constraint fk_Log_Token foreign key (TokenName) references Token(TokenName) 
 		on delete restrict on update cascade
 );

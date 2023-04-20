@@ -80,8 +80,14 @@ def add_balance(db: Session, username: str, tokenname: str, amount: float):
     if db_balance.amount + amount < 0:
         return "Failed. Negative amount!"
     db.query(models.UserBalance).filter(and_(
-            models.UserBalance.username == username, models.UserBalance.tokenname == tokenname)).update({"amount": db_balance.amount + amount})
+                models.UserBalance.username == username, models.UserBalance.tokenname == tokenname)).update({"amount": db_balance.amount + amount})
     db.commit()
+    now = datetime.utcnow()
+    db_log = models.BalanceLog(
+                username=username, tokenname=tokenname, amount = amount, timestamp = now)
+    db.add(db_log)
+    db.commit()
+    db.refresh(db_log)
     return "Success"
 
 def create_user(db: Session, user: schemas.UserCreate):
@@ -182,7 +188,7 @@ def swap(db: Session, token0: str, token1: str, amount: float, user_name: str):
             amounttoken0 = return_state[0]
         db.query(models.Pool).filter(models.Pool.poolid == pool.poolid).update({"reserve0": new_reserve0, "reserve1": new_reserve1, "tvl": new_tvl})
         now = datetime.utcnow()
-        db_log = models.Log(
+        db_log = models.SwapLog(
                 username=user_name, poolid=pool.poolid, timestamp = now, amounttoken0 = amounttoken0, amounttoken1 = amounttoken1)
         
         db.add(db_log)
@@ -194,13 +200,13 @@ def swap(db: Session, token0: str, token1: str, amount: float, user_name: str):
         return "Failed"
     
 def get_logs(db: Session):
-    logs = db.query(models.Log).order_by(desc(models.Log.timestamp)).all()
+    logs = db.query(models.SwapLog).order_by(desc(models.SwapLog.timestamp)).all()
     result = []
     for tx in logs:
         pool: models.Pool = get_pool_by_id(db, tx.poolid)
         token0: models.Token = get_token_by_name(db, pool.token0)
         log = {}
-        log["logid"] = tx.logid
+        log["swaplogid"] = tx.swaplogid
         log["username"] = tx.username
         log["poolid"] = tx.poolid
         log["timestamp"] = tx.timestamp
@@ -213,13 +219,13 @@ def get_logs(db: Session):
     return result
 
 def get_log_by_username(db: Session, username: str):
-    logs = db.query(models.Log).filter(models.Log.username == username).order_by(desc(models.Log.timestamp)).all()
+    logs = db.query(models.SwapLog).filter(models.SwapLog.username == username).order_by(desc(models.SwapLog.timestamp)).all()
     result = []
     for tx in logs:
         pool: models.Pool = get_pool_by_id(db, tx.poolid)
         token0: models.Token = get_token_by_name(db, pool.token0)
         log = {}
-        log["logid"] = tx.logid
+        log["swaplogid"] = tx.swaplogid
         log["username"] = tx.username
         log["poolid"] = tx.poolid
         log["timestamp"] = tx.timestamp
@@ -232,13 +238,13 @@ def get_log_by_username(db: Session, username: str):
     return result
 
 def get_log_by_pool(db: Session, poolid: int):
-    logs = db.query(models.Log).filter(models.Log.poolid == poolid).order_by(desc(models.Log.timestamp)).all()
+    logs = db.query(models.SwapLog).filter(models.SwapLog.poolid == poolid).order_by(desc(models.SwapLog.timestamp)).all()
     pool: models.Pool = get_pool_by_id(db, poolid)
     token0: models.Token = get_token_by_name(db, pool.token0)
     result = []
     for tx in logs:
         log = {}
-        log["logid"] = tx.logid
+        log["swaplogid"] = tx.swaplogid
         log["username"] = tx.username
         log["poolid"] = tx.poolid
         log["timestamp"] = tx.timestamp
@@ -250,3 +256,6 @@ def get_log_by_pool(db: Session, poolid: int):
         result.append(log)
     return result
 
+def get_balance_log_by_username(db: Session, user: int):
+    logs = db.query(models.BalanceLog).filter(models.BalanceLog.username == user).order_by(desc(models.BalanceLog.timestamp)).all()
+    return logs

@@ -46,13 +46,23 @@ class Pool(BaseModel):
     class Config:
         orm_mode = True
     
-class Log(BaseModel):
-    logid: int
+class SwapLog(BaseModel):
+    swaplogid: int
     username: str 
     poolid: int 
     timestamp: datetime
     amounttoken0: float 
     amounttoken1: float
+    
+    class Config:
+        orm_mode = True
+
+class BalanceLog(BaseModel):
+    balancelogid: int
+    username: str 
+    tokenname: str
+    amount: float
+    timestamp: datetime
     
     class Config:
         orm_mode = True
