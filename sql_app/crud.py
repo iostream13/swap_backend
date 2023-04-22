@@ -2,7 +2,7 @@ import imp
 from lib2to3.pgen2.token import OP
 from statistics import mode
 from time import time
-from sqlalchemy import Interval, and_, asc, false, or_, not_, desc, asc, func, true
+from sqlalchemy import Interval, and_, asc, false, or_, not_, desc, asc, func, true, exc, select
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -13,7 +13,7 @@ import json
 import random
 
 
-from . import models, schemas
+from . import models, schemas, database
 from .models import Gender, UserBalance
 
 
@@ -66,7 +66,7 @@ def create_balance(db: Session, username: str, tokenname: str, amount: float):
                 username=username, tokenname=tokenname, amount=amount)
         db.add(db_userbalance)
         db.commit()
-        db.refresh(db_userbalance)
+        #db.refresh(db_userbalance)
         return "Success"
     return "Fail. Token exist"
 
@@ -87,7 +87,7 @@ def add_balance(db: Session, username: str, tokenname: str, amount: float):
                 username=username, tokenname=tokenname, amount = amount, timestamp = now)
     db.add(db_log)
     db.commit()
-    db.refresh(db_log)
+    #db.refresh(db_log)
     return "Success"
 
 def create_user(db: Session, user: schemas.UserCreate):
@@ -110,7 +110,7 @@ def create_user(db: Session, user: schemas.UserCreate):
                           password=password, gender=user.gender, birthday=birthday, email=email, phone=phone, bio=bio)
     db.add(db_user)
     db.commit()
-    db.refresh(db_user)
+    #db.refresh(db_user)
     return db_user
 
 def compare_password(db: Session, username: str, password: str): 
@@ -129,7 +129,7 @@ def update_user(db: Session, user: schemas.UserCreate):
     for key, value in update_data.items():
         setattr(db_user, key, value)
     db.commit()
-    db.refresh(db_user)
+    #db.refresh(db_user)
     return db_user
 
 
@@ -159,11 +159,17 @@ def calculate(db: Session, token0: str, token1: str, amount: float):
     return [user_get, 1]
 
 def swap(db: Session, token0: str, token1: str, amount: float, user_name: str):
-    pool: models.Pool = get_pool_by_token(db, token0, token1)
     t0: models.Token = get_token_by_name(db, token0)
     t1: models.Token = get_token_by_name(db, token1)
     if check_balance(db, user_name, token0, amount) == "NO":
         return "Balance is not enough"
+    
+    pool: models.Pool = get_pool_by_token(db, token0, token1)
+    try:
+        pool: models.Pool = db.query(models.Pool).filter(models.Pool.poolid == pool.poolid).with_for_update().first()
+    except exc.OperationalError as e:
+        return "Table is locking"
+    
     return_state = calculate(db, token0, token1, amount)
     add_balance(db, user_name, token0, -amount)
     add_balance(db, user_name, token1, return_state[0])
@@ -190,12 +196,12 @@ def swap(db: Session, token0: str, token1: str, amount: float, user_name: str):
         now = datetime.utcnow()
         db_log = models.SwapLog(
                 username=user_name, poolid=pool.poolid, timestamp = now, amounttoken0 = amounttoken0, amounttoken1 = amounttoken1)
-        
         db.add(db_log)
+        #db.refresh(db_log)
         db.commit()
-        db.refresh(db_log)
         return "Success"
-    except:
+    except Exception as e:
+        print("Error occurred:", e)
         db.rollback()
         return "Failed"
     
